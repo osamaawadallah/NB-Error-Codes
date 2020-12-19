@@ -1,12 +1,17 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
-
 import re, os
+NB_file = 'Data\\NetBackup81_RefGuide_StatusCodes.pdf'
+os.system("pip install pdf2txt")
+os.system(f"pdf2txt.py {NB_file} -o Data/output.txt")
 counter=-1
 codes = {}
 error = 0
+cond = False
 with open('Data/output.txt', 'r', encoding='utf-8') as f:
     for line in f:
+        if re.search("This chapter includes the following topics:", line) is not None:
+            cond = True
+        if cond == False:
+            continue
         if counter == 1:
             if re.search("Message: ", line):
                 codes[error] = "".join(line.split(': ')[1:])[0:-1]

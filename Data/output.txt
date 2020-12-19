@@ -1,3 +1,2010 @@
+Veritas NetBackup™ Status
+Codes Reference Guide
+
+UNIX, Windows, and Linux
+
+Release 8.1
+
+Veritas NetBackup™ Status Codes Reference Guide
+
+Legal Notice
+Copyright © 2017 Veritas Technologies LLC. All rights reserved.
+
+Veritas, the Veritas Logo, and NetBackup are trademarks or registered trademarks of Veritas
+Technologies LLC or its affiliates in the U.S. and other countries. Other names may be
+trademarks of their respective owners.
+
+This product may contain third party software for which Veritas is required to provide attribution
+to the third party (“Third Party Programs”). Some of the Third Party Programs are available
+under open source or free software licenses. The License Agreement accompanying the
+Software does not alter any rights or obligations you may have under those open source or
+free software licenses. Refer to the third party legal notices document accompanying this
+Veritas product or available at:
+
+https://www.veritas.com/about/legal/license-agreements
+
+The product described in this document is distributed under licenses restricting its use, copying,
+distribution, and decompilation/reverse engineering. No part of this document may be
+reproduced in any form by any means without prior written authorization of Veritas Technologies
+LLC and its licensors, if any.
+
+THE DOCUMENTATION IS PROVIDED "AS IS" AND ALL EXPRESS OR IMPLIED
+CONDITIONS, REPRESENTATIONS AND WARRANTIES, INCLUDING ANY IMPLIED
+WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR
+NON-INFRINGEMENT, ARE DISCLAIMED, EXCEPT TO THE EXTENT THAT SUCH
+DISCLAIMERS ARE HELD TO BE LEGALLY INVALID. VERITAS TECHNOLOGIES LLC
+SHALL NOT BE LIABLE FOR INCIDENTAL OR CONSEQUENTIAL DAMAGES IN
+CONNECTION WITH THE FURNISHING, PERFORMANCE, OR USE OF THIS
+DOCUMENTATION. THE INFORMATION CONTAINED IN THIS DOCUMENTATION IS
+SUBJECT TO CHANGE WITHOUT NOTICE.
+
+The Licensed Software and Documentation are deemed to be commercial computer software
+as defined in FAR 12.212 and subject to restricted rights as defined in FAR Section 52.227-19
+"Commercial Computer Software - Restricted Rights" and DFARS 227.7202, et seq.
+"Commercial Computer Software and Commercial Computer Software Documentation," as
+applicable, and any successor regulations, whether delivered by Veritas as on premises or
+hosted services. Any use, modification, reproduction release, performance, display or disclosure
+of the Licensed Software and Documentation by the U.S. Government shall be solely in
+accordance with the terms of this Agreement.
+
+Veritas Technologies LLC
+500 E Middlefield Road
+Mountain View, CA 94043
+
+http://www.veritas.com
+
+Technical Support
+Technical Support maintains support centers globally. All support services will be delivered
+in accordance with your support agreement and the then-current enterprise technical support
+policies. For information about our support offerings and how to contact Technical Support,
+visit our website:
+
+https://www.veritas.com/support
+
+You can manage your Veritas account information at the following URL:
+
+https://my.veritas.com
+
+If you have questions regarding an existing support agreement, please email the support
+agreement administration team for your region as follows:
+
+Worldwide (except Japan)
+
+CustomerCare@veritas.com
+
+Japan
+
+CustomerCare_Japan@veritas.com
+
+Documentation
+The latest documentation is available on the Veritas website:
+
+https://sort.veritas.com/documents
+Documentation feedback
+Your feedback is important to us. Suggest improvements or report errors or omissions to the
+documentation. Include the document title, document version, chapter title, and section title
+of the text on which you are reporting. Send feedback to:
+
+NB.doc@veritas.com
+
+You can also see documentation information or ask a question on the Veritas community site:
+
+http://www.veritas.com/community/
+Veritas Services and Operations Readiness Tools (SORT)
+Veritas Services and Operations Readiness Tools (SORT) is a website that provides information
+and tools to automate and simplify certain time-consuming administrative tasks. Depending
+on the product, SORT helps you prepare for installations and upgrades, identify risks in your
+datacenters, and improve operational efficiency. To see what services and tools SORT provides
+for your product, see the data sheet:
+
+https://sort.veritas.com/data/support/SORT_Data_Sheet.pdf
+
+Chapter 1
+
+Contents
+
+NetBackup status codes ................................................. 44
+NetBackup status codes ................................................................ 44
+NetBackup status code: 0 ........................................................ 44
+NetBackup status code: 1 ........................................................ 45
+NetBackup status code: 2 ........................................................ 49
+NetBackup status code: 3 ........................................................ 50
+NetBackup status code: 4 ........................................................ 51
+NetBackup status code: 5 ........................................................ 51
+NetBackup status code: 6 ........................................................ 52
+NetBackup status code: 7 ........................................................ 54
+NetBackup status code: 8 ........................................................ 54
+NetBackup status code: 9 ........................................................ 54
+NetBackup status code: 10 ....................................................... 55
+NetBackup status code: 11 ....................................................... 55
+NetBackup status code: 12 ....................................................... 57
+NetBackup status code: 13 ....................................................... 58
+NetBackup status code: 14 ....................................................... 62
+NetBackup status code: 15 ....................................................... 63
+NetBackup status code: 16 ....................................................... 63
+NetBackup status code: 17 ....................................................... 63
+NetBackup status code: 18 ....................................................... 63
+NetBackup status code: 19 ....................................................... 64
+NetBackup status code: 20 ....................................................... 64
+NetBackup status code: 21 ....................................................... 67
+NetBackup status code: 22 ....................................................... 68
+NetBackup status code: 23 ....................................................... 68
+NetBackup status code: 24 ....................................................... 69
+NetBackup status code: 25 ....................................................... 70
+NetBackup status code: 26 ....................................................... 73
+NetBackup status code: 27 ....................................................... 73
+NetBackup status code: 28 ....................................................... 74
+NetBackup status code: 29 ....................................................... 74
+NetBackup status code: 30 ....................................................... 75
+NetBackup status code: 31 ....................................................... 75
+NetBackup status code: 32 ....................................................... 75
+NetBackup status code: 33 ....................................................... 75
+
+Contents
+
+5
+
+NetBackup status code: 34 ....................................................... 76
+NetBackup status code: 35 ....................................................... 76
+NetBackup status code: 36 ....................................................... 77
+NetBackup status code: 37 ....................................................... 77
+NetBackup status code: 38 ....................................................... 78
+NetBackup status code: 39 ....................................................... 78
+NetBackup status code: 40 ....................................................... 78
+NetBackup status code: 41 ....................................................... 79
+NetBackup status code: 42 ....................................................... 83
+NetBackup status code: 43 ....................................................... 83
+NetBackup status code: 44 ....................................................... 84
+NetBackup status code: 45 ....................................................... 84
+NetBackup status code: 46 ....................................................... 85
+NetBackup status code: 47 ....................................................... 86
+NetBackup status code: 48 ....................................................... 86
+NetBackup status code: 49 ....................................................... 87
+NetBackup status code: 50 ....................................................... 88
+NetBackup status code: 51 ....................................................... 89
+NetBackup status code: 52 ....................................................... 89
+NetBackup status code: 53 ....................................................... 90
+NetBackup status code: 54 ....................................................... 91
+NetBackup status code: 55 ....................................................... 91
+NetBackup status code: 56 ....................................................... 92
+NetBackup status code: 57 ....................................................... 92
+NetBackup status code: 58 ....................................................... 93
+NetBackup status code: 59 ....................................................... 93
+NetBackup status code: 60 ....................................................... 95
+NetBackup status code: 61 ....................................................... 96
+NetBackup status code: 63 ....................................................... 96
+NetBackup status code: 64 ....................................................... 96
+NetBackup status code: 65 ....................................................... 97
+NetBackup status code: 66 ....................................................... 97
+NetBackup status code: 67 ....................................................... 98
+NetBackup status code: 68 ....................................................... 99
+NetBackup status code: 69 ....................................................... 99
+NetBackup status code: 70 ..................................................... 100
+NetBackup status code: 71 ..................................................... 100
+NetBackup status code: 72 ..................................................... 101
+NetBackup status code: 73 ..................................................... 101
+NetBackup status code: 74 ..................................................... 101
+NetBackup status code: 75 ..................................................... 102
+NetBackup status code: 76 ..................................................... 102
+NetBackup status code: 77 ..................................................... 102
+
+Contents
+
+6
+
+NetBackup status code: 78 ..................................................... 103
+NetBackup status code: 79 ..................................................... 104
+NetBackup status code: 80 ..................................................... 104
+NetBackup status code: 81 ..................................................... 104
+NetBackup status code: 82 ..................................................... 105
+NetBackup status code: 83 ..................................................... 105
+NetBackup status code: 84 ..................................................... 107
+NetBackup status code: 85 ..................................................... 108
+NetBackup status code: 86 ..................................................... 109
+NetBackup status code: 87 ..................................................... 110
+NetBackup status code: 89 ..................................................... 110
+NetBackup status code: 90 ..................................................... 111
+NetBackup status code: 91 .................................................... 112
+NetBackup status code: 92 .................................................... 113
+NetBackup status code: 93 .................................................... 114
+NetBackup status code: 94 ..................................................... 114
+NetBackup status code: 95 .................................................... 115
+NetBackup status code: 96 .................................................... 115
+NetBackup status code: 97 .................................................... 117
+NetBackup status code: 98 ..................................................... 118
+NetBackup status code: 99 ..................................................... 118
+NetBackup status code: 100 ................................................... 119
+NetBackup status code: 101 ................................................... 119
+NetBackup status code: 102 ................................................... 119
+NetBackup status code: 103 ................................................... 120
+NetBackup status code: 104 ................................................... 120
+NetBackup status code: 105 ................................................... 121
+NetBackup status code: 106 ................................................... 121
+NetBackup status code: 108 ................................................... 121
+NetBackup status code: 109 ................................................... 122
+NetBackup status code: 110 .................................................... 122
+NetBackup status code: 111 .................................................... 123
+NetBackup status code: 112 .................................................... 123
+NetBackup status code: 114 .................................................... 124
+NetBackup status code: 116 .................................................... 124
+NetBackup status code: 117 .................................................... 125
+NetBackup status code: 118 .................................................... 126
+NetBackup status code: 120 ................................................... 128
+NetBackup status code: 121 ................................................... 129
+NetBackup status code: 122 ................................................... 129
+NetBackup status code: 123 ................................................... 129
+NetBackup status code: 124 ................................................... 129
+NetBackup status code: 125 ................................................... 130
+
+Contents
+
+7
+
+NetBackup status code: 126 ................................................... 130
+NetBackup status code: 127 ................................................... 130
+NetBackup status code: 128 ................................................... 131
+NetBackup status code: 129 ................................................... 131
+NetBackup status code: 130 ................................................... 132
+NetBackup status code: 131 ................................................... 133
+NetBackup status code: 132 ................................................... 133
+NetBackup status code: 133 ................................................... 134
+NetBackup status code: 134 ................................................... 135
+NetBackup status code: 135 ................................................... 135
+NetBackup status code: 136 ................................................... 135
+NetBackup status code: 140 ................................................... 136
+NetBackup status code: 141 ................................................... 136
+NetBackup status code: 142 ................................................... 136
+NetBackup status code: 143 ................................................... 137
+NetBackup status code: 144 ................................................... 138
+NetBackup status code: 145 ................................................... 138
+NetBackup status code: 146 ................................................... 138
+NetBackup status code: 147 ................................................... 139
+NetBackup status code: 148 ................................................... 139
+NetBackup status code: 149 ................................................... 140
+NetBackup status code: 150 ................................................... 140
+NetBackup status code: 152 ................................................... 140
+NetBackup status code: 153 ................................................... 140
+NetBackup status code: 154 ................................................... 141
+NetBackup status code: 155 ................................................... 141
+NetBackup status code: 156 ................................................... 142
+NetBackup status code: 157 ................................................... 155
+NetBackup status code: 158 ................................................... 155
+NetBackup status code: 159 ................................................... 156
+NetBackup status code: 160 ................................................... 156
+NetBackup status code: 161 ................................................... 157
+NetBackup status code: 162 ................................................... 157
+NetBackup status code: 163 ................................................... 157
+NetBackup status code: 164 ................................................... 158
+NetBackup status code: 165 ................................................... 158
+NetBackup status code: 166 ................................................... 158
+NetBackup status code: 167 ................................................... 159
+NetBackup status code: 168 ................................................... 159
+NetBackup status code: 169 ................................................... 159
+NetBackup status code: 170 ................................................... 160
+NetBackup status code: 171 ................................................... 161
+NetBackup status code: 172 ................................................... 161
+
+Contents
+
+8
+
+NetBackup status code: 173 ................................................... 162
+NetBackup status code: 174 ................................................... 162
+NetBackup status code: 175 ................................................... 164
+NetBackup status code: 176 ................................................... 164
+NetBackup status code: 177 ................................................... 165
+NetBackup status code: 178 ................................................... 166
+NetBackup status code: 179 ................................................... 166
+NetBackup status code: 180 ................................................... 166
+NetBackup status code: 181 ................................................... 166
+NetBackup status code: 182 ................................................... 167
+NetBackup status code: 183 ................................................... 167
+NetBackup status code: 184 ................................................... 168
+NetBackup status code: 185 ................................................... 169
+NetBackup status code: 186 ................................................... 169
+NetBackup status code: 189 ................................................... 170
+NetBackup status code: 190 ................................................... 170
+NetBackup status code: 191 ................................................... 170
+NetBackup status code: 192 ................................................... 172
+NetBackup status code: 193 ................................................... 173
+NetBackup status code: 194 ................................................... 173
+NetBackup status code: 195 ................................................... 174
+NetBackup status code: 196 ................................................... 174
+NetBackup status code: 197 ................................................... 174
+NetBackup status code: 198 ................................................... 175
+NetBackup status code: 199 ................................................... 176
+NetBackup status code: 200 ................................................... 176
+NetBackup status code: 201 ................................................... 177
+NetBackup status code: 202 ................................................... 178
+NetBackup status code: 203 ................................................... 179
+NetBackup status code: 204 ................................................... 180
+NetBackup status code: 205 ................................................... 181
+NetBackup status code: 206 ................................................... 183
+NetBackup status code: 207 ................................................... 183
+NetBackup status code: 209 ................................................... 184
+NetBackup status code: 210 ................................................... 184
+NetBackup status code: 212 ................................................... 185
+NetBackup status code: 213 ................................................... 185
+NetBackup status code: 215 ................................................... 186
+NetBackup status code: 216 ................................................... 186
+NetBackup status code: 217 ................................................... 187
+NetBackup status code: 218 ................................................... 187
+NetBackup status code: 219 ................................................... 188
+NetBackup status code: 220 ................................................... 189
+
+Contents
+
+9
+
+NetBackup status code: 221 ................................................... 189
+NetBackup status code: 222 ................................................... 190
+NetBackup status code: 223 ................................................... 190
+NetBackup status code: 224 ................................................... 190
+NetBackup status code: 225 ................................................... 191
+NetBackup status code: 226 ................................................... 191
+NetBackup status code: 227 ................................................... 191
+NetBackup status code: 228 ................................................... 192
+NetBackup status code: 229 ................................................... 192
+NetBackup status code: 230 ................................................... 193
+NetBackup status code: 231 ................................................... 193
+NetBackup status code: 232 ................................................... 193
+NetBackup status code: 233 ................................................... 193
+NetBackup status code: 234 ................................................... 194
+NetBackup status code: 235 ................................................... 194
+NetBackup status code: 236 ................................................... 195
+NetBackup status code: 237 ................................................... 195
+NetBackup status code: 238 ................................................... 195
+NetBackup status code: 239 ................................................... 195
+NetBackup status code: 240 ................................................... 196
+NetBackup status code: 241 ................................................... 196
+NetBackup status code: 242 ................................................... 196
+NetBackup status code: 243 ................................................... 197
+NetBackup status code: 245 ................................................... 197
+NetBackup status code: 246 ................................................... 197
+NetBackup status code: 247 ................................................... 197
+NetBackup status code: 248 ................................................... 198
+NetBackup status code: 249 ................................................... 198
+NetBackup status code: 250 ................................................... 198
+NetBackup status code: 251 ................................................... 198
+NetBackup status code: 252 ................................................... 199
+NetBackup status code: 253 ................................................... 199
+NetBackup status code: 254 ................................................... 199
+NetBackup status code: 256 ................................................... 200
+NetBackup status code: 257 ................................................... 200
+NetBackup status code: 258 ................................................... 200
+NetBackup status code: 259 ................................................... 200
+NetBackup status code: 260 ................................................... 201
+NetBackup status code: 261 ................................................... 201
+NetBackup status code: 262 ................................................... 201
+NetBackup status code: 263 ................................................... 201
+NetBackup status code: 265 ................................................... 202
+NetBackup status code: 266 ................................................... 202
+
+Contents
+
+10
+
+NetBackup status code: 267 ................................................... 202
+NetBackup status code: 268 ................................................... 203
+NetBackup status code: 269 ................................................... 203
+NetBackup status code: 270 ................................................... 204
+NetBackup status code: 271 ................................................... 204
+NetBackup status code: 272 ................................................... 204
+NetBackup status code: 273 ................................................... 204
+NetBackup status code: 274 ................................................... 205
+NetBackup status code: 275 ................................................... 205
+NetBackup status code: 276 ................................................... 205
+NetBackup status code: 277 ................................................... 205
+NetBackup status code: 278 ................................................... 206
+NetBackup status code: 279 ................................................... 206
+NetBackup status code: 280 ................................................... 206
+NetBackup status code: 281 ................................................... 206
+NetBackup status code: 282 ................................................... 207
+NetBackup status code: 283 ................................................... 207
+NetBackup status code: 284 ................................................... 207
+NetBackup status code: 285 ................................................... 208
+NetBackup status code: 286 ................................................... 208
+NetBackup status code: 287 ................................................... 208
+NetBackup status code: 288 ................................................... 209
+NetBackup status code: 289 ................................................... 209
+NetBackup status code: 290 ................................................... 209
+NetBackup status code: 291 ................................................... 210
+NetBackup status code: 292 ................................................... 211
+NetBackup status code: 293 ................................................... 211
+NetBackup status code: 294 ................................................... 212
+NetBackup status code: 295 ................................................... 213
+NetBackup status code: 296 ................................................... 213
+NetBackup status code: 297 ................................................... 214
+NetBackup status code: 298 ................................................... 214
+NetBackup status code: 299 ................................................... 214
+NetBackup status code: 300 ................................................... 215
+NetBackup status code: 301 ................................................... 215
+NetBackup status code: 302 ................................................... 216
+NetBackup status code: 303 ................................................... 217
+NetBackup status code: 304 ................................................... 217
+NetBackup status code: 305 ................................................... 217
+NetBackup status code: 306 ................................................... 218
+NetBackup status code: 307 ................................................... 218
+NetBackup status code: 308 ................................................... 218
+NetBackup status code: 309 ................................................... 219
+
+Contents
+
+11
+
+NetBackup status code: 310 ................................................... 219
+NetBackup status code: 311 .................................................... 220
+NetBackup status code: 312 ................................................... 220
+NetBackup status code: 313 ................................................... 220
+NetBackup status code: 314 ................................................... 221
+NetBackup status code: 315 ................................................... 221
+NetBackup status code: 316 ................................................... 221
+NetBackup status code: 317 ................................................... 222
+NetBackup status code: 318 ................................................... 222
+NetBackup status code: 319 ................................................... 222
+NetBackup status code: 320 ................................................... 223
+NetBackup status code: 321 ................................................... 223
+NetBackup status code: 322 ................................................... 224
+NetBackup status code: 323 ................................................... 224
+NetBackup status code: 324 ................................................... 224
+NetBackup status code: 325 ................................................... 225
+NetBackup status code: 326 ................................................... 225
+NetBackup status code: 327 ................................................... 225
+NetBackup status code: 328 ................................................... 226
+NetBackup status code: 329 ................................................... 226
+NetBackup status code: 330 ................................................... 226
+NetBackup status code: 331 ................................................... 227
+NetBackup status code: 332 ................................................... 227
+NetBackup status code: 333 ................................................... 228
+NetBackup status code: 334 ................................................... 228
+NetBackup status code: 335 ................................................... 228
+NetBackup status code: 336 ................................................... 228
+NetBackup status code: 337 ................................................... 229
+NetBackup status code: 338 ................................................... 229
+NetBackup status code: 339 ................................................... 229
+NetBackup status code: 340 ................................................... 229
+NetBackup status code: 341 ................................................... 230
+NetBackup status code: 342 ................................................... 230
+NetBackup status code: 343 ................................................... 230
+NetBackup status code: 344 ................................................... 231
+NetBackup status code: 345 ................................................... 231
+NetBackup status code: 346 ................................................... 231
+NetBackup status code: 347 ................................................... 231
+NetBackup status code: 348 ................................................... 232
+NetBackup status code: 349 ................................................... 232
+NetBackup status code: 350 ................................................... 232
+NetBackup status code: 351 ................................................... 232
+NetBackup status code: 400 ................................................... 233
+
+Contents
+
+12
+
+NetBackup status code: 401 ................................................... 233
+NetBackup status code: 402 ................................................... 233
+NetBackup status code: 403 ................................................... 234
+NetBackup status code: 404 ................................................... 234
+NetBackup status code: 405 ................................................... 235
+NetBackup status code: 406 ................................................... 235
+NetBackup status code: 407 ................................................... 236
+NetBackup status code: 408 ................................................... 236
+NetBackup status code: 409 ................................................... 236
+NetBackup status code: 501 ................................................... 237
+NetBackup status code: 502 ................................................... 237
+NetBackup status code: 503 ................................................... 237
+NetBackup status code: 504 ................................................... 238
+NetBackup status code: 505 ................................................... 238
+NetBackup status code: 506 ................................................... 239
+NetBackup status code: 507 ................................................... 240
+NetBackup status code: 508 ................................................... 240
+NetBackup status code: 509 ................................................... 241
+NetBackup status code: 510 ................................................... 241
+NetBackup status code: 511 ................................................... 242
+NetBackup status code: 512 ................................................... 242
+NetBackup status code: 513 ................................................... 243
+NetBackup status code: 514 ................................................... 243
+NetBackup status code: 516 ................................................... 244
+NetBackup status code: 517 ................................................... 245
+NetBackup status code: 518 ................................................... 245
+NetBackup status code: 519 ................................................... 246
+NetBackup status code: 520 ................................................... 246
+NetBackup status code: 521 ................................................... 246
+NetBackup status code: 522 ................................................... 246
+NetBackup status code: 523 ................................................... 247
+NetBackup status code: 525 ................................................... 247
+NetBackup status code: 526 ................................................... 248
+NetBackup status code: 527 ................................................... 248
+NetBackup status code: 537 ................................................... 249
+NetBackup status code: 538 ................................................... 249
+NetBackup status code: 552 ................................................... 249
+NetBackup status code: 600 ................................................... 250
+NetBackup status code: 601 ................................................... 250
+NetBackup status code: 602 ................................................... 250
+NetBackup status code: 603 ................................................... 251
+NetBackup status code: 604 ................................................... 251
+NetBackup status code: 605 ................................................... 252
+
+Contents
+
+13
+
+NetBackup status code: 606 ................................................... 252
+NetBackup status code: 607 ................................................... 252
+NetBackup status code: 608 ................................................... 253
+NetBackup status code: 609 ................................................... 253
+NetBackup status code: 610 ................................................... 254
+NetBackup status code: 611 ................................................... 254
+NetBackup status code: 612 ................................................... 254
+NetBackup status code: 613 ................................................... 255
+NetBackup status code: 614 ................................................... 255
+NetBackup status code: 615 ................................................... 256
+NetBackup status code: 616 ................................................... 256
+NetBackup status code: 617 ................................................... 256
+NetBackup status code: 618 ................................................... 257
+NetBackup status code: 619 ................................................... 257
+NetBackup status code: 620 ................................................... 257
+NetBackup status code: 621 ................................................... 258
+NetBackup status code: 622 ................................................... 258
+NetBackup status code: 623 ................................................... 258
+NetBackup status code: 624 ................................................... 259
+NetBackup status code: 625 ................................................... 259
+NetBackup status code: 626 ................................................... 259
+NetBackup status code: 627 ................................................... 260
+NetBackup status code: 628 ................................................... 260
+NetBackup status code: 629 ................................................... 260
+NetBackup status code: 630 ................................................... 261
+NetBackup status code: 631 ................................................... 261
+NetBackup status code: 632 ................................................... 262
+NetBackup status code: 633 ................................................... 262
+NetBackup status code: 634 ................................................... 262
+NetBackup status code: 635 ................................................... 263
+NetBackup status code: 636 ................................................... 263
+NetBackup status code: 637 ................................................... 264
+NetBackup status code: 638 ................................................... 264
+NetBackup status code: 639 ................................................... 264
+NetBackup status code: 640 ................................................... 265
+NetBackup status code: 641 ................................................... 266
+NetBackup status code: 642 ................................................... 266
+NetBackup status code: 643 ................................................... 266
+NetBackup status code: 644 ................................................... 266
+NetBackup status code: 645 ................................................... 267
+NetBackup status code: 646 ................................................... 268
+NetBackup status code: 647 ................................................... 268
+NetBackup status code: 648 ................................................... 269
+
+Contents
+
+14
+
+NetBackup status code: 649 ................................................... 269
+NetBackup status code: 650 ................................................... 269
+NetBackup status code: 651 ................................................... 270
+NetBackup status code: 652 ................................................... 270
+NetBackup status code: 653 ................................................... 271
+NetBackup status code: 654 ................................................... 271
+NetBackup status code: 655 ................................................... 271
+NetBackup status code: 656 ................................................... 272
+NetBackup status code: 657 ................................................... 272
+NetBackup status code: 658 ................................................... 272
+NetBackup status code: 659 ................................................... 273
+NetBackup status code: 660 ................................................... 273
+NetBackup status code: 661 ................................................... 274
+NetBackup status code: 662 ................................................... 274
+NetBackup status code: 663 ................................................... 274
+NetBackup status code: 664 ................................................... 275
+NetBackup status code: 665 ................................................... 275
+NetBackup status code: 667 ................................................... 275
+NetBackup status code: 668 ................................................... 276
+NetBackup status code: 669 ................................................... 276
+NetBackup status code: 670 ................................................... 276
+NetBackup status code: 671 ................................................... 277
+NetBackup status code: 800 ................................................... 277
+NetBackup status code: 801 ................................................... 277
+NetBackup status code: 802 ................................................... 278
+NetBackup status code: 803 ................................................... 279
+NetBackup status code: 805 ................................................... 280
+NetBackup status code: 806 ................................................... 280
+NetBackup status code: 807 ................................................... 281
+NetBackup status code: 811 ................................................... 281
+NetBackup status code: 812 ................................................... 281
+NetBackup status code: 813 ................................................... 282
+NetBackup status code: 818 ................................................... 282
+NetBackup status code: 819 ................................................... 282
+NetBackup status code: 823 ................................................... 282
+NetBackup status code: 830 ................................................... 283
+NetBackup status code: 831 ................................................... 284
+NetBackup status code: 832 ................................................... 284
+NetBackup status code: 833 ................................................... 284
+NetBackup status code: 900 ................................................... 285
+NetBackup status code: 901 ................................................... 285
+NetBackup status code: 902 ................................................... 286
+NetBackup status code: 903 ................................................... 286
+
+Contents
+
+15
+
+NetBackup status code: 904 ................................................... 286
+NetBackup status code: 905 ................................................... 287
+NetBackup status code: 906 ................................................... 287
+NetBackup status code: 907 ................................................... 287
+NetBackup status code: 908 ................................................... 288
+NetBackup status code: 912 ................................................... 288
+NetBackup status code: 914 ................................................... 289
+NetBackup status code: 915 ................................................... 289
+NetBackup status code: 916 ................................................... 289
+NetBackup status code: 917 ................................................... 290
+NetBackup status code: 918 ................................................... 290
+NetBackup status code: 1000 .................................................. 290
+NetBackup status code: 1001 .................................................. 291
+NetBackup status code: 1002 .................................................. 291
+NetBackup status code: 1057 .................................................. 291
+NetBackup status code: 1058 .................................................. 292
+NetBackup status code: 1401 .................................................. 292
+NetBackup status code: 1402 .................................................. 292
+NetBackup status code: 1403 .................................................. 293
+NetBackup status code: 1405 .................................................. 293
+NetBackup status code: 1407 .................................................. 293
+NetBackup status code: 1408 .................................................. 293
+NetBackup status code: 1409 .................................................. 293
+NetBackup status code: 1410 .................................................. 294
+NetBackup status code: 1411 .................................................. 294
+NetBackup status code: 1412 .................................................. 294
+NetBackup status code: 1413 .................................................. 294
+NetBackup status code: 1414 .................................................. 295
+NetBackup status code: 1415 .................................................. 295
+NetBackup status code: 1416 .................................................. 295
+NetBackup status code: 1417 .................................................. 295
+NetBackup status code: 1418 .................................................. 296
+NetBackup status code: 1419 .................................................. 296
+NetBackup status code: 1420 .................................................. 296
+NetBackup status code: 1421 .................................................. 296
+NetBackup status code: 1422 .................................................. 296
+NetBackup status code: 1423 .................................................. 297
+NetBackup status code: 1425 .................................................. 297
+NetBackup status code: 1426 .................................................. 297
+NetBackup status code: 1500 .................................................. 297
+NetBackup status code: 1501 .................................................. 298
+NetBackup status code: 1502 .................................................. 298
+NetBackup status code: 1503 .................................................. 299
+
+Contents
+
+16
+
+NetBackup status code: 1504 .................................................. 299
+NetBackup status code: 1505 .................................................. 300
+NetBackup status code: 1506 .................................................. 300
+NetBackup status code: 1507 .................................................. 300
+NetBackup status code: 1508 .................................................. 301
+NetBackup status code: 1509 .................................................. 301
+NetBackup status code: 1510 .................................................. 301
+NetBackup status code: 1511 .................................................. 302
+NetBackup status code: 1512 .................................................. 302
+NetBackup status code: 1513 .................................................. 302
+NetBackup status code: 1514 .................................................. 303
+NetBackup status code: 1515 .................................................. 303
+NetBackup status code: 1516 .................................................. 303
+NetBackup status code: 1517 .................................................. 304
+NetBackup status code: 1518 .................................................. 304
+NetBackup status code: 1519 .................................................. 304
+NetBackup status code: 1521 .................................................. 305
+NetBackup status code: 1522 .................................................. 305
+NetBackup status code: 1523 .................................................. 305
+NetBackup status code: 1524 .................................................. 305
+NetBackup status code: 1525 .................................................. 306
+NetBackup status code: 1526 .................................................. 306
+NetBackup status code: 1527 .................................................. 306
+NetBackup status code: 1528 .................................................. 307
+NetBackup status code: 1529 .................................................. 307
+NetBackup status code: 1530 ................................................. 308
+NetBackup status code: 1531 .................................................. 309
+NetBackup status code: 1532 .................................................. 309
+NetBackup status code: 1533 .................................................. 310
+NetBackup status code: 1534 .................................................. 310
+NetBackup status code: 1535 .................................................. 310
+NetBackup status code: 1536 .................................................. 311
+NetBackup status code: 1537 .................................................. 311
+NetBackup status code: 1538 .................................................. 312
+NetBackup status code: 1539 .................................................. 312
+NetBackup status code: 1540 .................................................. 313
+NetBackup status code: 1541 .................................................. 313
+NetBackup status code: 1542 .................................................. 313
+NetBackup status code: 1543 .................................................. 314
+NetBackup status code: 1545 .................................................. 314
+NetBackup status code: 1546 .................................................. 314
+NetBackup status code: 1547 .................................................. 314
+NetBackup status code: 1548 .................................................. 315
+
+Contents
+
+17
+
+NetBackup status code: 1549 .................................................. 315
+NetBackup status code: 1552 .................................................. 316
+NetBackup status code: 1553 .................................................. 316
+NetBackup status code: 1554 .................................................. 317
+NetBackup status code: 1556 .................................................. 317
+NetBackup status code: 1557 .................................................. 317
+NetBackup status code: 1558 .................................................. 318
+NetBackup status code: 1559 .................................................. 318
+NetBackup status code: 1560 .................................................. 318
+NetBackup status code: 1561 .................................................. 319
+NetBackup status code: 1562 .................................................. 319
+NetBackup status code: 1563 .................................................. 319
+NetBackup status code: 1564 .................................................. 320
+NetBackup status code: 1565 .................................................. 320
+NetBackup status code: 1566 .................................................. 320
+NetBackup status code: 1567 .................................................. 320
+NetBackup status code: 1568 .................................................. 321
+NetBackup status code: 1569 .................................................. 321
+NetBackup status code: 1570 .................................................. 321
+NetBackup status code: 1571 .................................................. 322
+NetBackup status code: 1572 .................................................. 322
+NetBackup status code: 1573 .................................................. 322
+NetBackup status code: 1574 .................................................. 323
+NetBackup status code: 1575 .................................................. 323
+NetBackup status code: 1576 .................................................. 323
+NetBackup status code: 1577 .................................................. 324
+NetBackup status code: 1578 .................................................. 324
+NetBackup status code: 1579 .................................................. 324
+NetBackup status code: 1580 .................................................. 324
+NetBackup status code: 1581 .................................................. 325
+NetBackup status code: 1582 .................................................. 325
+NetBackup status code: 1583 .................................................. 325
+NetBackup status code: 1584 .................................................. 326
+NetBackup status code: 1585 .................................................. 326
+NetBackup status code: 1586 .................................................. 326
+NetBackup status code: 1587 .................................................. 327
+NetBackup status code: 1588 .................................................. 327
+NetBackup status code: 1589 .................................................. 327
+NetBackup status code: 1590 .................................................. 327
+NetBackup status code: 1591 .................................................. 328
+NetBackup status code: 1592 .................................................. 328
+NetBackup status code: 1593 .................................................. 328
+NetBackup status code: 1594 .................................................. 329
+
+Contents
+
+18
+
+NetBackup status code: 1596 .................................................. 329
+NetBackup status code: 1597 .................................................. 329
+NetBackup status code: 1598 .................................................. 329
+NetBackup status code: 1599 .................................................. 330
+NetBackup status code: 1600 .................................................. 330
+NetBackup status code: 1601 .................................................. 330
+NetBackup status code: 1602 .................................................. 331
+NetBackup status code: 1603 .................................................. 331
+NetBackup status code: 1604 .................................................. 331
+NetBackup status code: 1800 .................................................. 332
+NetBackup status code: 1915 .................................................. 332
+NetBackup status code: 1916 .................................................. 332
+NetBackup status code: 1917 .................................................. 333
+NetBackup status code: 1918 .................................................. 333
+NetBackup status code: 1919 .................................................. 333
+NetBackup status code: 1920 .................................................. 334
+NetBackup status code: 1921 .................................................. 334
+NetBackup status code: 1922 .................................................. 334
+NetBackup status code: 1924 .................................................. 335
+NetBackup status code: 1925 .................................................. 335
+NetBackup status code: 1926 .................................................. 335
+NetBackup status code: 1927 .................................................. 336
+NetBackup status code: 1928 .................................................. 336
+NetBackup status code: 2000 .................................................. 336
+NetBackup status code: 2001 .................................................. 337
+NetBackup status code: 2002 .................................................. 338
+NetBackup status code: 2003 .................................................. 338
+NetBackup status code: 2004 .................................................. 339
+NetBackup status code: 2005 .................................................. 339
+NetBackup status code: 2006 .................................................. 339
+NetBackup status code: 2007 .................................................. 340
+NetBackup status code: 2008 .................................................. 340
+NetBackup status code: 2009 .................................................. 340
+NetBackup status code: 2010 .................................................. 341
+NetBackup status code: 2011 .................................................. 341
+NetBackup status code: 2012 .................................................. 341
+NetBackup status code: 2013 .................................................. 342
+NetBackup status code: 2014 .................................................. 342
+NetBackup status code: 2015 .................................................. 343
+NetBackup status code: 2016 .................................................. 343
+NetBackup status code: 2017 .................................................. 343
+NetBackup status code: 2018 .................................................. 344
+NetBackup status code: 2019 .................................................. 344
+
+Contents
+
+19
+
+NetBackup status code: 2020 .................................................. 344
+NetBackup status code: 2021 .................................................. 344
+NetBackup status code: 2022 .................................................. 345
+NetBackup status code: 2023 .................................................. 345
+NetBackup status code: 2024 .................................................. 345
+NetBackup status code: 2025 .................................................. 346
+NetBackup status code: 2026 .................................................. 346
+NetBackup status code: 2027 .................................................. 347
+NetBackup status code: 2028 .................................................. 347
+NetBackup status code: 2029 .................................................. 347
+NetBackup status code: 2030 .................................................. 348
+NetBackup status code: 2031 .................................................. 348
+NetBackup status code: 2032 .................................................. 349
+NetBackup status code: 2033 .................................................. 349
+NetBackup status code: 2034 .................................................. 349
+NetBackup status code: 2035 .................................................. 350
+NetBackup status code: 2036 .................................................. 350
+NetBackup status code: 2037 .................................................. 350
+NetBackup status code: 2038 .................................................. 351
+NetBackup status code: 2039 .................................................. 351
+NetBackup status code: 2040 .................................................. 351
+NetBackup status code: 2041 .................................................. 352
+NetBackup status code: 2042 .................................................. 352
+NetBackup status code: 2043 .................................................. 352
+NetBackup status code: 2044 .................................................. 352
+NetBackup status code: 2045 .................................................. 353
+NetBackup status code: 2046 .................................................. 353
+NetBackup status code: 2047 .................................................. 353
+NetBackup status code: 2048 .................................................. 353
+NetBackup status code: 2049 .................................................. 354
+NetBackup status code: 2050 .................................................. 354
+NetBackup status code: 2051 .................................................. 354
+NetBackup status code: 2052 .................................................. 355
+NetBackup status code: 2053 .................................................. 355
+NetBackup status code: 2054 .................................................. 355
+NetBackup status code: 2055 .................................................. 355
+NetBackup status code: 2056 .................................................. 356
+NetBackup status code: 2057 .................................................. 356
+NetBackup status code: 2058 .................................................. 356
+NetBackup status code: 2059 .................................................. 356
+NetBackup status code: 2060 .................................................. 357
+NetBackup status code: 2061 .................................................. 357
+NetBackup status code: 2062 .................................................. 357
+
+Contents
+
+20
+
+NetBackup status code: 2063 .................................................. 357
+NetBackup status code: 2064 .................................................. 358
+NetBackup status code: 2065 .................................................. 358
+NetBackup status code: 2066 .................................................. 358
+NetBackup status code: 2067 .................................................. 359
+NetBackup status code: 2068 .................................................. 359
+NetBackup status code: 2069 .................................................. 359
+NetBackup status code: 2070 .................................................. 360
+NetBackup status code: 2071 .................................................. 360
+NetBackup status code: 2072 .................................................. 360
+NetBackup status code: 2073 .................................................. 361
+NetBackup status code: 2074 .................................................. 361
+NetBackup status code: 2075 .................................................. 361
+NetBackup status code: 2076 .................................................. 362
+NetBackup status code: 2078 .................................................. 362
+NetBackup status code: 2079 .................................................. 363
+NetBackup status code: 2080 .................................................. 363
+NetBackup status code: 2081 .................................................. 363
+NetBackup status code: 2082 .................................................. 364
+NetBackup status code: 2083 .................................................. 364
+NetBackup status code: 2084 .................................................. 364
+NetBackup status code: 2085 .................................................. 365
+NetBackup status code: 2086 .................................................. 365
+NetBackup status code: 2087 .................................................. 365
+NetBackup status code: 2088 .................................................. 365
+NetBackup status code: 2089 .................................................. 366
+NetBackup status code: 2090 .................................................. 366
+NetBackup status code: 2091 .................................................. 367
+NetBackup status code: 2092 .................................................. 368
+NetBackup status code: 2093 .................................................. 368
+NetBackup status code: 2094 .................................................. 369
+NetBackup status code: 2095 .................................................. 369
+NetBackup status code: 2096 .................................................. 369
+NetBackup status code: 2097 .................................................. 370
+NetBackup status code: 2098 .................................................. 370
+NetBackup status code: 2099 .................................................. 370
+NetBackup status code: 2100 .................................................. 371
+NetBackup status code: 2101 .................................................. 371
+NetBackup status code: 2102 .................................................. 371
+NetBackup status code: 2103 .................................................. 372
+NetBackup status code: 2104 .................................................. 372
+NetBackup status code: 2105 .................................................. 372
+NetBackup status code: 2106 .................................................. 372
+
+Contents
+
+21
+
+NetBackup status code: 2107 .................................................. 373
+NetBackup status code: 2108 .................................................. 374
+NetBackup status code: 2109 .................................................. 374
+NetBackup status code: 2110 .................................................. 374
+NetBackup status code: 2111 .................................................. 375
+NetBackup status code: 2112 ................................................. 375
+NetBackup status code: 2113 .................................................. 375
+NetBackup status code: 2504 .................................................. 376
+NetBackup status code: 2517 .................................................. 376
+NetBackup status code: 2521 .................................................. 376
+NetBackup status code: 2522 .................................................. 377
+NetBackup status code: 2523 .................................................. 377
+NetBackup status code: 2524 .................................................. 377
+NetBackup status code: 2525 .................................................. 378
+NetBackup status code: 2800 .................................................. 378
+NetBackup status code: 2801 .................................................. 379
+NetBackup status code: 2802 .................................................. 380
+NetBackup status code: 2803 .................................................. 380
+NetBackup status code: 2804 .................................................. 382
+NetBackup status code: 2805 .................................................. 383
+NetBackup status code: 2806 .................................................. 384
+NetBackup status code: 2807 .................................................. 384
+NetBackup status code: 2808 .................................................. 385
+NetBackup status code: 2809 .................................................. 385
+NetBackup status code: 2810 .................................................. 386
+NetBackup status code: 2811 .................................................. 387
+NetBackup status code: 2812 .................................................. 388
+NetBackup status code: 2813 .................................................. 389
+NetBackup status code: 2814 .................................................. 389
+NetBackup status code: 2815 .................................................. 390
+NetBackup status code: 2816 .................................................. 390
+NetBackup status code: 2817 .................................................. 391
+NetBackup status code: 2818 .................................................. 391
+NetBackup status code: 2819 .................................................. 392
+NetBackup status code: 2820 .................................................. 392
+NetBackup status code: 2821 .................................................. 394
+NetBackup status code: 2826 .................................................. 394
+NetBackup status code: 2827 .................................................. 395
+NetBackup status code: 2828 .................................................. 395
+NetBackup status code: 2829 .................................................. 395
+NetBackup status code: 2830 .................................................. 396
+NetBackup status code: 2831 .................................................. 396
+NetBackup status code: 2832 .................................................. 396
+
+Contents
+
+22
+
+NetBackup status code: 2833 .................................................. 397
+NetBackup status code: 2834 .................................................. 397
+NetBackup status code: 2835 .................................................. 397
+NetBackup status code: 2836 .................................................. 398
+NetBackup status code: 2837 .................................................. 398
+NetBackup status code: 2838 .................................................. 398
+NetBackup status code: 2839 .................................................. 399
+NetBackup status code: 2840 .................................................. 399
+NetBackup status code: 2841 .................................................. 399
+NetBackup status code: 2842 .................................................. 400
+NetBackup status code: 2843 .................................................. 400
+NetBackup status code: 2844 .................................................. 400
+NetBackup status code: 2845 .................................................. 401
+NetBackup status code: 2846 .................................................. 401
+NetBackup status code: 2847 .................................................. 401
+NetBackup status code: 2848 .................................................. 401
+NetBackup status code: 2849 .................................................. 402
+NetBackup status code: 2850 .................................................. 402
+NetBackup status code: 2864 .................................................. 403
+NetBackup status code: 2865 .................................................. 403
+NetBackup status code: 2866 .................................................. 403
+NetBackup status code: 4200 .................................................. 404
+NetBackup status code: 4201 .................................................. 404
+NetBackup status code: 4202 .................................................. 405
+NetBackup status code: 4203 .................................................. 405
+NetBackup status code: 4204 .................................................. 405
+NetBackup status code: 4205 .................................................. 406
+NetBackup status code: 4206 .................................................. 406
+NetBackup status code: 4207 .................................................. 406
+NetBackup status code: 4208 .................................................. 407
+NetBackup status code: 4209 .................................................. 407
+NetBackup status code: 4210 .................................................. 408
+NetBackup status code: 4211 .................................................. 408
+NetBackup status code: 4212 .................................................. 408
+NetBackup status code: 4213 .................................................. 409
+NetBackup status code: 4214 .................................................. 409
+NetBackup status code: 4215 .................................................. 410
+NetBackup status code: 4216 .................................................. 410
+NetBackup status code: 4217 .................................................. 410
+NetBackup status code: 4218 .................................................. 410
+NetBackup status code: 4219 .................................................. 411
+NetBackup status code: 4220 .................................................. 411
+NetBackup status code: 4221 .................................................. 412
+
+Contents
+
+23
+
+NetBackup status code: 4222 .................................................. 412
+NetBackup status code: 4223 .................................................. 412
+NetBackup status code: 4224 .................................................. 412
+NetBackup status code: 4225 .................................................. 413
+NetBackup status code: 4226 .................................................. 413
+NetBackup status code: 4227 .................................................. 413
+NetBackup status code: 4228 .................................................. 414
+NetBackup status code: 4229 .................................................. 414
+NetBackup status code: 4230 .................................................. 414
+NetBackup status code: 4231 .................................................. 415
+NetBackup status code: 4232 .................................................. 415
+NetBackup status code: 4233 .................................................. 415
+NetBackup status code: 4234 .................................................. 416
+NetBackup status code: 4235 .................................................. 416
+NetBackup status code: 4236 .................................................. 416
+NetBackup status code: 4237 .................................................. 416
+NetBackup status code: 4238 .................................................. 417
+NetBackup status code: 4239 .................................................. 417
+NetBackup status code: 4240 .................................................. 417
+NetBackup status code: 4243 .................................................. 418
+NetBackup status code: 4245 .................................................. 418
+NetBackup status code: 4246 .................................................. 418
+NetBackup status code: 4247 .................................................. 419
+NetBackup status code: 4248 .................................................. 419
+NetBackup status code: 4249 .................................................. 419
+NetBackup status code: 4250 .................................................. 419
+NetBackup status code: 4251 .................................................. 420
+NetBackup status code: 4252 .................................................. 420
+NetBackup status code: 4253 .................................................. 420
+NetBackup status code: 4254 .................................................. 420
+NetBackup status code: 4255 .................................................. 421
+NetBackup status code: 4256 .................................................. 421
+NetBackup status code: 4257 .................................................. 422
+NetBackup status code: 4258 .................................................. 422
+NetBackup status code: 4259 .................................................. 422
+NetBackup status code: 4260 .................................................. 422
+NetBackup status code: 4261 .................................................. 423
+NetBackup status code: 4262 .................................................. 423
+NetBackup status code: 4263 .................................................. 423
+NetBackup status code: 4264 .................................................. 424
+NetBackup status code: 4265 .................................................. 424
+NetBackup status code: 4266 .................................................. 424
+NetBackup status code: 4267 .................................................. 425
+
+Contents
+
+24
+
+NetBackup status code: 4268 .................................................. 425
+NetBackup status code: 4269 .................................................. 425
+NetBackup status code: 4270 .................................................. 426
+NetBackup status code: 4271 .................................................. 426
+NetBackup status code: 4272 .................................................. 426
+NetBackup status code: 4273 .................................................. 426
+NetBackup status code: 4274 .................................................. 427
+NetBackup status code: 4275 .................................................. 427
+NetBackup status code: 4276 .................................................. 427
+NetBackup status code: 4277 .................................................. 428
+NetBackup status code: 4278 .................................................. 428
+NetBackup status code: 4279 .................................................. 428
+NetBackup status code: 4280 .................................................. 429
+NetBackup status code: 4281 .................................................. 429
+NetBackup status code: 4282 .................................................. 429
+NetBackup status code: 4283 .................................................. 429
+NetBackup status code: 4287 .................................................. 430
+NetBackup status code: 4290 .................................................. 431
+NetBackup status code: 4293 .................................................. 431
+NetBackup status code: 5400 .................................................. 431
+NetBackup status code: 5401 .................................................. 431
+NetBackup status code: 5402 .................................................. 432
+NetBackup status code: 5403 .................................................. 432
+NetBackup status code: 5404 .................................................. 432
+NetBackup status code: 5405 .................................................. 433
+NetBackup status code: 5406 .................................................. 433
+NetBackup status code: 5407 .................................................. 433
+NetBackup status code: 5408 .................................................. 434
+NetBackup status code: 5409 .................................................. 434
+NetBackup status code: 5410 .................................................. 434
+NetBackup status code: 5411 .................................................. 434
+NetBackup status code: 5412 .................................................. 435
+NetBackup status code: 5413 .................................................. 435
+NetBackup status code: 5414 .................................................. 435
+NetBackup status code: 5415 .................................................. 436
+NetBackup status code: 5416 .................................................. 436
+NetBackup status code: 5417 .................................................. 436
+NetBackup status code: 5418 .................................................. 436
+NetBackup status code: 5419 .................................................. 437
+NetBackup status code: 5420 .................................................. 437
+NetBackup status code: 5421 .................................................. 437
+NetBackup status code: 5422 .................................................. 438
+NetBackup status code: 5423 .................................................. 438
+
+Contents
+
+25
+
+NetBackup status code: 5424 .................................................. 438
+NetBackup status code: 5425 .................................................. 439
+NetBackup status code: 5426 .................................................. 439
+NetBackup status code: 5427 .................................................. 440
+NetBackup status code: 5428 .................................................. 440
+NetBackup status code: 5429 .................................................. 440
+NetBackup status code: 5430 .................................................. 441
+NetBackup status code: 5431 .................................................. 441
+NetBackup status code: 5432 .................................................. 441
+NetBackup status code: 5433 .................................................. 442
+NetBackup status code: 5434 .................................................. 442
+NetBackup status code: 5435 .................................................. 442
+NetBackup status code: 5436 .................................................. 443
+NetBackup status code: 5437 .................................................. 443
+NetBackup status code: 5438 .................................................. 443
+NetBackup status code: 5439 .................................................. 444
+NetBackup status code: 5440 .................................................. 444
+NetBackup status code: 5441 .................................................. 444
+NetBackup status code: 5442 .................................................. 445
+NetBackup status code: 5443 .................................................. 445
+NetBackup status code: 5444 .................................................. 445
+NetBackup status code: 5445 .................................................. 445
+NetBackup status code: 5446 .................................................. 446
+NetBackup status code: 5447 .................................................. 446
+NetBackup status code: 5448 .................................................. 446
+NetBackup status code: 5449 .................................................. 446
+NetBackup status code: 5450 .................................................. 447
+NetBackup status code: 5451 .................................................. 447
+NetBackup status code: 5452 .................................................. 447
+NetBackup status code: 5500 .................................................. 448
+NetBackup status code: 5501 .................................................. 448
+NetBackup status code: 5502 .................................................. 448
+NetBackup status code: 5503 .................................................. 448
+NetBackup status code: 5504 .................................................. 449
+NetBackup status code: 5505 .................................................. 449
+NetBackup status code: 5506 .................................................. 449
+NetBackup status code: 5507 .................................................. 450
+NetBackup status code: 5508 .................................................. 450
+NetBackup status code: 5626 .................................................. 450
+NetBackup status code: 5761 .................................................. 451
+NetBackup status code: 5762 .................................................. 451
+NetBackup status code: 5763 .................................................. 452
+NetBackup status code: 5764 .................................................. 452
+
+Contents
+
+26
+
+NetBackup status code: 5765 .................................................. 452
+NetBackup status code: 5766 .................................................. 452
+NetBackup status code: 5767 .................................................. 453
+NetBackup status code: 5768 .................................................. 453
+NetBackup status code: 5769 .................................................. 453
+NetBackup status code: 5770 .................................................. 453
+NetBackup status code: 5771 .................................................. 454
+NetBackup status code: 5772 .................................................. 454
+NetBackup status code: 5773 .................................................. 454
+NetBackup status code: 5774 .................................................. 454
+NetBackup status code: 5775 .................................................. 455
+NetBackup status code: 5776 .................................................. 455
+NetBackup status code: 5777 .................................................. 455
+NetBackup status code: 5778 .................................................. 455
+NetBackup status code: 5779 .................................................. 456
+NetBackup status code: 5780 .................................................. 456
+NetBackup status code: 5781 .................................................. 456
+NetBackup status code: 5782 .................................................. 456
+NetBackup status code: 5783 .................................................. 457
+NetBackup status code: 5784 .................................................. 457
+NetBackup status code: 5786 .................................................. 457
+NetBackup status code: 5787 .................................................. 457
+NetBackup status code: 5788 .................................................. 457
+NetBackup status code: 5789 .................................................. 458
+NetBackup status code: 5790 .................................................. 458
+NetBackup status code: 5794 .................................................. 458
+NetBackup status code: 5796 .................................................. 458
+NetBackup status code: 5798 .................................................. 459
+NetBackup status code: 5799 .................................................. 459
+NetBackup status code: 5800 .................................................. 459
+NetBackup status code: 5801 .................................................. 459
+NetBackup status code: 5803 .................................................. 460
+NetBackup status code: 5804 .................................................. 460
+NetBackup status code: 5805 .................................................. 460
+NetBackup status code: 5806 .................................................. 460
+NetBackup status code: 5807 .................................................. 461
+NetBackup status code: 5808 .................................................. 461
+NetBackup status code: 5809 .................................................. 461
+NetBackup status code: 5811 .................................................. 461
+NetBackup status code: 5812 .................................................. 462
+NetBackup status code: 5813 .................................................. 462
+NetBackup status code: 5814 .................................................. 462
+NetBackup status code: 5815 .................................................. 462
+
+Contents
+
+27
+
+NetBackup status code: 5816 .................................................. 463
+NetBackup status code: 5817 .................................................. 463
+NetBackup status code: 5819 .................................................. 463
+NetBackup status code: 5820 .................................................. 463
+NetBackup status code: 5821 .................................................. 463
+NetBackup status code: 5902 .................................................. 464
+NetBackup status code: 5903 .................................................. 464
+NetBackup status code: 5904 .................................................. 464
+NetBackup status code: 5905 .................................................. 465
+NetBackup status code: 5906 .................................................. 465
+NetBackup status code: 5907 .................................................. 465
+NetBackup status code: 5908 .................................................. 465
+NetBackup status code: 5909 .................................................. 466
+NetBackup status code: 5910 .................................................. 466
+NetBackup status code: 5913 .................................................. 466
+NetBackup status code: 5914 .................................................. 466
+NetBackup status code: 5915 .................................................. 467
+NetBackup status code: 5916 .................................................. 467
+NetBackup status code: 5917 .................................................. 467
+NetBackup status code: 5918 .................................................. 468
+NetBackup status code: 5919 .................................................. 468
+NetBackup status code: 5920 .................................................. 468
+NetBackup status code: 5921 .................................................. 468
+NetBackup status code: 5922 .................................................. 469
+NetBackup status code: 5925 .................................................. 469
+NetBackup status code: 5926 .................................................. 469
+NetBackup status code: 5927 .................................................. 469
+NetBackup status code: 5929 .................................................. 470
+NetBackup status code: 5930 .................................................. 470
+NetBackup status code: 5931 .................................................. 471
+NetBackup status code: 5932 .................................................. 471
+NetBackup status code: 5933 .................................................. 471
+NetBackup status code: 5934 .................................................. 471
+NetBackup status code: 5936 .................................................. 472
+NetBackup status code: 5938 .................................................. 472
+NetBackup status code: 5939 .................................................. 472
+NetBackup status code: 5940 .................................................. 472
+NetBackup status code: 5941 .................................................. 473
+NetBackup status code: 5942 .................................................. 473
+NetBackup status code: 5943 .................................................. 473
+NetBackup status code: 5944 .................................................. 474
+NetBackup status code: 5945 .................................................. 474
+NetBackup status code: 5946 .................................................. 474
+
+Contents
+
+28
+
+NetBackup status code: 5947 .................................................. 474
+NetBackup status code: 5948 .................................................. 475
+NetBackup status code: 5949 .................................................. 475
+NetBackup status code: 5950 .................................................. 475
+NetBackup status code: 5953 .................................................. 475
+NetBackup status code: 5954 .................................................. 476
+NetBackup status code: 5955 .................................................. 476
+NetBackup status code: 5956 .................................................. 476
+NetBackup status code: 5957 .................................................. 477
+NetBackup status code: 5958 .................................................. 477
+NetBackup status code: 5959 .................................................. 477
+NetBackup status code: 5960 .................................................. 477
+NetBackup status code: 5962 .................................................. 478
+NetBackup status code: 5963 .................................................. 478
+NetBackup status code: 5964 .................................................. 479
+NetBackup status code: 5965 .................................................. 479
+NetBackup status code: 5966 .................................................. 479
+NetBackup status code: 5967 .................................................. 479
+NetBackup status code: 5968 .................................................. 480
+NetBackup status code: 5969 .................................................. 480
+NetBackup status code: 5970 .................................................. 480
+NetBackup status code: 5971 .................................................. 481
+NetBackup status code: 5972 .................................................. 481
+NetBackup status code: 5973 .................................................. 481
+NetBackup status code: 5974 .................................................. 482
+NetBackup status code: 5978 .................................................. 482
+NetBackup status code: 5979 .................................................. 483
+NetBackup status code: 5980 .................................................. 483
+NetBackup status code: 5982 .................................................. 483
+NetBackup status code: 5983 .................................................. 484
+NetBackup status code: 5986 .................................................. 485
+NetBackup status code: 5987 .................................................. 485
+NetBackup status code: 5988 .................................................. 489
+NetBackup status code: 5989 .................................................. 489
+NetBackup status code: 6000 .................................................. 490
+NetBackup status code: 6530 .................................................. 490
+NetBackup status code: 6531 .................................................. 490
+NetBackup status code: 6600 .................................................. 491
+NetBackup status code: 6601 .................................................. 491
+NetBackup status code: 6602 .................................................. 492
+NetBackup status code: 6603 .................................................. 492
+NetBackup status code: 6604 .................................................. 492
+NetBackup status code: 6605 .................................................. 492
+
+Contents
+
+29
+
+NetBackup status code: 6606 .................................................. 493
+NetBackup status code: 6607 .................................................. 493
+NetBackup status code: 6608 .................................................. 493
+NetBackup status code: 6609 .................................................. 494
+NetBackup status code: 6610 .................................................. 494
+NetBackup status code: 6612 .................................................. 494
+NetBackup status code: 6614 .................................................. 495
+NetBackup status code: 6616 .................................................. 495
+NetBackup status code: 6617 .................................................. 495
+NetBackup status code: 6618 .................................................. 495
+NetBackup status code: 6619 .................................................. 496
+NetBackup status code: 6620 .................................................. 496
+NetBackup status code: 6621 .................................................. 496
+NetBackup status code: 6622 .................................................. 496
+NetBackup status code: 6623 .................................................. 497
+NetBackup status code: 6625 .................................................. 497
+NetBackup status code: 6626 .................................................. 497
+NetBackup status code: 6628 .................................................. 498
+NetBackup status code: 6629 .................................................. 498
+NetBackup status code: 6630 .................................................. 498
+NetBackup status code: 6631 .................................................. 499
+NetBackup status code: 6633 .................................................. 499
+NetBackup status code: 6634 .................................................. 499
+NetBackup status code: 6635 .................................................. 499
+NetBackup status code: 6640 .................................................. 500
+NetBackup status code: 6641 .................................................. 500
+NetBackup status code: 6642 .................................................. 500
+NetBackup status code: 6643 .................................................. 500
+NetBackup status code: 6644 .................................................. 501
+NetBackup status code: 6646 .................................................. 501
+NetBackup status code: 6647 .................................................. 501
+NetBackup status code: 6649 .................................................. 501
+NetBackup status code: 6650 .................................................. 502
+NetBackup status code: 6652 .................................................. 502
+NetBackup status code: 6653 .................................................. 502
+NetBackup status code: 6654 .................................................. 503
+NetBackup status code: 6655 .................................................. 503
+NetBackup status code: 7600 .................................................. 503
+NetBackup status code: 7601 .................................................. 503
+NetBackup status code: 7603 .................................................. 504
+NetBackup status code: 7604 .................................................. 504
+NetBackup status code: 7607 .................................................. 504
+NetBackup status code: 7609 .................................................. 504
+
+Contents
+
+30
+
+NetBackup status code: 7610 .................................................. 505
+NetBackup status code: 7611 .................................................. 505
+NetBackup status code: 7612 .................................................. 505
+NetBackup status code: 7613 .................................................. 505
+NetBackup status code: 7614 .................................................. 505
+NetBackup status code: 7617 .................................................. 506
+NetBackup status code: 7618 .................................................. 506
+NetBackup status code: 7619 .................................................. 506
+NetBackup status code: 7622 .................................................. 506
+NetBackup status code: 7623 .................................................. 507
+NetBackup status code: 7624 .................................................. 507
+NetBackup status code: 7625 .................................................. 507
+NetBackup status code: 7627 .................................................. 508
+NetBackup status code: 7628 .................................................. 508
+NetBackup status code: 7631 .................................................. 509
+NetBackup status code: 7632 .................................................. 509
+NetBackup status code: 7633 .................................................. 509
+NetBackup status code: 7634 .................................................. 509
+NetBackup status code: 7635 .................................................. 510
+NetBackup status code: 7636 .................................................. 510
+NetBackup status code: 7637 .................................................. 510
+NetBackup status code: 7638 .................................................. 511
+NetBackup status code: 7639 .................................................. 511
+NetBackup status code: 7640 .................................................. 511
+NetBackup status code: 7641 .................................................. 512
+NetBackup status code: 7642 .................................................. 512
+NetBackup status code: 7643 .................................................. 512
+NetBackup status code: 7645 .................................................. 513
+NetBackup status code: 7647 .................................................. 513
+NetBackup status code: 7648 .................................................. 513
+NetBackup status code: 7649 .................................................. 513
+NetBackup status code: 7650 .................................................. 514
+NetBackup status code: 7651 .................................................. 514
+NetBackup status code: 7652 .................................................. 514
+NetBackup status code: 7653 .................................................. 515
+NetBackup status code: 7654 .................................................. 516
+NetBackup status code: 7655 .................................................. 516
+NetBackup status code: 7656 .................................................. 517
+NetBackup status code: 7657 .................................................. 517
+NetBackup status code: 7658 .................................................. 518
+NetBackup status code: 7659 .................................................. 518
+NetBackup status code: 7660 .................................................. 518
+NetBackup status code: 8000 .................................................. 519
+
+Contents
+
+31
+
+NetBackup status code: 8500 .................................................. 519
+NetBackup status code: 8504 .................................................. 519
+NetBackup status code: 8505 .................................................. 519
+NetBackup status code: 8506 .................................................. 520
+NetBackup status code: 8507 .................................................. 520
+NetBackup status code: 8508 .................................................. 520
+NetBackup status code: 8509 .................................................. 521
+NetBackup status code: 8510 .................................................. 521
+NetBackup status code: 8617 .................................................. 521
+NetBackup status code: 8618 .................................................. 521
+NetBackup status code: 8619 .................................................. 522
+NetBackup status code: 8620 .................................................. 522
+NetBackup status code: 8621 .................................................. 522
+NetBackup status code: 8622 .................................................. 523
+NetBackup status code: 8623 .................................................. 523
+NetBackup status code: 8625 .................................................. 523
+NetBackup status code: 8700 .................................................. 524
+NetBackup status code: 8701 .................................................. 524
+NetBackup status code: 8702 .................................................. 525
+NetBackup status code: 8703 .................................................. 525
+NetBackup status code: 8704 .................................................. 525
+NetBackup status code: 8706 .................................................. 526
+NetBackup status code: 8707 .................................................. 526
+NetBackup status code: 8708 .................................................. 526
+NetBackup status code: 8709 .................................................. 526
+NetBackup status code: 8710 .................................................. 527
+NetBackup status code: 8711 .................................................. 527
+NetBackup status code: 8712 .................................................. 527
+NetBackup status code: 8713 .................................................. 527
+NetBackup status code: 8714 .................................................. 528
+NetBackup status code: 8715 .................................................. 528
+NetBackup status code: 8716 .................................................. 528
+NetBackup status code: 8717 .................................................. 528
+NetBackup status code: 8718 .................................................. 529
+NetBackup status code: 8719 .................................................. 529
+NetBackup status code: 8720 .................................................. 529
+NetBackup status code: 8722 ................................................. 530
+NetBackup status code: 8723 .................................................. 530
+NetBackup status code: 8724 .................................................. 530
+NetBackup status code: 8800 .................................................. 530
+NetBackup status code: 8900 .................................................. 531
+NetBackup status code: 8901 .................................................. 531
+NetBackup status code: 8902 .................................................. 531
+
+Contents
+
+32
+
+NetBackup status code: 9101 .................................................. 532
+NetBackup status code: 9102 .................................................. 532
+NetBackup status code: 9103 .................................................. 532
+NetBackup status code: 9300 .................................................. 533
+NetBackup status code: 9301 .................................................. 533
+NetBackup status code: 9302 .................................................. 534
+NetBackup status code: 9303 .................................................. 534
+NetBackup status code: 9304 .................................................. 535
+NetBackup status code: 9305 .................................................. 535
+NetBackup status code: 9306 .................................................. 536
+NetBackup status code: 9307 .................................................. 536
+NetBackup status code: 9308 .................................................. 537
+NetBackup status code: 9309 .................................................. 537
+NetBackup KMS status codes ....................................................... 538
+NetBackup KMS status code: 1 ............................................... 538
+NetBackup KMS status code: 2 ............................................... 538
+NetBackup KMS status code: 3 ............................................... 539
+NetBackup KMS status code: 4 ............................................... 539
+NetBackup KMS status code: 5 ............................................... 539
+NetBackup KMS status code: 6 ............................................... 539
+NetBackup KMS status code: 7 ............................................... 539
+NetBackup KMS status code: 8 ............................................... 540
+NetBackup KMS status code: 9 ............................................... 540
+NetBackup KMS status code: 10 .............................................. 540
+NetBackup KMS status code: 11 .............................................. 540
+NetBackup KMS status code: 12 .............................................. 540
+NetBackup KMS status code: 13 .............................................. 540
+NetBackup KMS status code: 14 .............................................. 541
+NetBackup KMS status code: 15 .............................................. 541
+NetBackup KMS status code: 16 .............................................. 541
+NetBackup KMS status code: 17 .............................................. 541
+NetBackup KMS status code: 18 .............................................. 541
+NetBackup KMS status code: 19 .............................................. 542
+NetBackup KMS status code: 20 .............................................. 542
+NetBackup KMS status code: 21 .............................................. 542
+NetBackup KMS status code: 22 .............................................. 542
+NetBackup KMS status code: 23 .............................................. 542
+NetBackup KMS status code: 24 .............................................. 542
+NetBackup KMS status code: 25 .............................................. 543
+NetBackup KMS status code: 26 .............................................. 543
+NetBackup KMS status code: 27 .............................................. 543
+NetBackup KMS status code: 28 .............................................. 543
+NetBackup KMS status code: 29 .............................................. 543
+
+Contents
+
+33
+
+NetBackup KMS status code: 30 .............................................. 543
+NetBackup KMS status code: 31 .............................................. 544
+NetBackup KMS status code: 32 .............................................. 544
+NetBackup KMS status code: 33 .............................................. 544
+NetBackup KMS status code: 34 .............................................. 544
+NetBackup KMS status code: 35 .............................................. 544
+NetBackup KMS status code: 36 .............................................. 544
+NetBackup KMS status code: 37 .............................................. 545
+NetBackup KMS status code: 38 .............................................. 545
+NetBackup KMS status code: 39 .............................................. 545
+NetBackup KMS status code: 40 .............................................. 545
+NetBackup KMS status code: 41 .............................................. 545
+NetBackup KMS status code: 42 .............................................. 546
+NetBackup KMS status code: 44 .............................................. 546
+NetBackup KMS status code: 45 .............................................. 546
+NetBackup KMS status code: 46 .............................................. 546
+NetBackup KMS status code: 47 .............................................. 546
+NetBackup KMS status code: 48 .............................................. 547
+NetBackup KMS status code: 49 .............................................. 547
+NetBackup KMS status code: 50 .............................................. 547
+NetBackup KMS status code: 51 .............................................. 547
+NetBackup KMS status code: 52 .............................................. 547
+NetBackup KMS status code: 53 .............................................. 548
+NetBackup KMS status code: 54 .............................................. 548
+NetBackup KMS status code: 55 .............................................. 548
+NetBackup KMS status code: 56 .............................................. 548
+NetBackup KMS status code: 57 .............................................. 548
+NetBackup KMS status code: 58 .............................................. 548
+NetBackup KMS status code: 59 .............................................. 549
+NetBackup KMS status code: 60 .............................................. 549
+NetBackup KMS status code: 61 .............................................. 549
+NetBackup KMS status code: 62 .............................................. 550
+NetBackup KMS status code: 63 .............................................. 550
+NetBackup KMS status code: 1287 .......................................... 550
+Media Manager status codes ....................................... 551
+Media Manager status codes ........................................................ 551
+Media Manager status code 1 ................................................. 551
+Media Manager status code 2 ................................................. 551
+Media Manager status code 3 ................................................. 552
+Media Manager status code 4 ................................................. 552
+Media Manager status code 5 ................................................. 553
+
+Chapter 2
+
+Contents
+
+34
+
+Media Manager status code 6 ................................................. 553
+Media Manager status code 7 ................................................. 553
+Media Manager status code 8 ................................................. 553
+Media Manager status code 9 ................................................. 554
+Media Manager status code 10 ................................................ 554
+Media Manager status code 11 ................................................ 555
+Media Manager status code 12 ................................................ 555
+Media Manager status code 13 ................................................ 556
+Media Manager status code 14 ................................................ 556
+Media Manager status code 15 ................................................ 556
+Media Manager status code 16 ................................................ 557
+Media Manager status code 18 ................................................ 557
+Media Manager status code 19 ................................................ 558
+Media Manager status code 20 ................................................ 558
+Media Manager status code 21 ................................................ 558
+Media Manager status code 22 ................................................ 559
+Media Manager status code 23 ................................................ 559
+Media Manager status code 25 ................................................ 559
+Media Manager status code 26 ................................................ 559
+Media Manager status code 27 ................................................ 560
+Media Manager status code 28 ................................................ 560
+Media Manager status code 32 ................................................ 561
+Media Manager status code 34 ................................................ 561
+Media Manager status code 35 ................................................ 561
+Media Manager status code 36 ................................................ 562
+Media Manager status code 37 ................................................ 562
+Media Manager status code 39 ................................................ 563
+Media Manager status code 40 ................................................ 563
+Media Manager status code 41 ................................................ 563
+Media Manager status code 42 ................................................ 564
+Media Manager status code 43 ................................................ 564
+Media Manager status code 44 ................................................ 565
+Media Manager status code 45 ................................................ 566
+Media Manager status code 46 ................................................ 566
+Media Manager status code 47 ................................................ 566
+Media Manager status code 48 ................................................ 567
+Media Manager status code 49 ................................................ 567
+Media Manager status code 50 ................................................ 567
+Media Manager status code 51 ................................................ 568
+Media Manager status code 52 ................................................ 568
+Media Manager status code 53 ................................................ 569
+Media Manager status code 54 ................................................ 569
+Media Manager status code 55 ................................................ 569
+
+Contents
+
+35
+
+Media Manager status code 57 ................................................ 570
+Media Manager status code 58 ................................................ 570
+Media Manager status code 59 ................................................ 571
+Media Manager status code 60 ................................................ 571
+Media Manager status code 61 ................................................ 572
+Media Manager status code 62 ................................................ 572
+Media Manager status code 63 ................................................ 572
+Media Manager status code 64 ................................................ 572
+Media Manager status code 65 ................................................ 573
+Media Manager status code 67 ................................................ 573
+Media Manager status code 68 ................................................ 574
+Media Manager status code 69 ................................................ 574
+Media Manager status code 70 ................................................ 575
+Media Manager status code 71 ................................................ 576
+Media Manager status code 72 ................................................ 576
+Media Manager status code 73 ................................................ 577
+Media Manager status code 74 ................................................ 577
+Media Manager status code 75 ................................................ 577
+Media Manager status code 76 ................................................ 578
+Media Manager status code 78 ................................................ 578
+Media Manager status code 79 ................................................ 579
+Media Manager status code 80 ................................................ 579
+Media Manager status code 81 ................................................ 579
+Media Manager status code 82 ................................................ 580
+Media Manager status code 83 ................................................ 581
+Media Manager status code 84 ................................................ 581
+Media Manager status code 85 ................................................ 581
+Media Manager status code 86 ................................................ 582
+Media Manager status code 87 ................................................ 582
+Media Manager status code 88 ................................................ 582
+Media Manager status code 89 ................................................ 583
+Media Manager status code 90 ................................................ 583
+Media Manager status code 92 ................................................ 584
+Media Manager status code 93 ................................................ 584
+Media Manager status code 94 ................................................ 584
+Media Manager status code 95 ................................................ 585
+Media Manager status code 96 ................................................ 585
+Media Manager status code 97 ................................................ 586
+Media Manager status code 101 .............................................. 587
+Media Manager status code 102 .............................................. 587
+Media Manager status code 104 .............................................. 588
+Media Manager status code 105 .............................................. 588
+Media Manager status code 109 .............................................. 588
+
+Contents
+
+36
+
+Media Manager status code 110 .............................................. 589
+Media Manager status code 111 .............................................. 590
+Media Manager status code 112 .............................................. 590
+Media Manager status code 113 .............................................. 590
+Media Manager status code 114 .............................................. 590
+Media Manager status code 115 .............................................. 591
+Media Manager status code 116 .............................................. 591
+Media Manager status code 117 .............................................. 592
+Media Manager status code 118 .............................................. 592
+Media Manager status code 119 .............................................. 592
+Media Manager status code 121 .............................................. 593
+Media Manager status code 122 .............................................. 593
+Media Manager status code 126 .............................................. 593
+Media Manager status code 127 .............................................. 594
+Media Manager status code 129 .............................................. 594
+Media Manager status code 130 .............................................. 595
+Media Manager status code 131 .............................................. 595
+Media Manager status code 132 .............................................. 596
+Media Manager status code 133 .............................................. 596
+Media Manager status code 134 .............................................. 597
+Media Manager status code 135 .............................................. 597
+Media Manager status code 136 .............................................. 597
+Media Manager status code 137 .............................................. 598
+Media Manager status code 138 .............................................. 598
+Media Manager status code 139 .............................................. 598
+Media Manager status code 140 .............................................. 599
+Media Manager status code 141 .............................................. 599
+Media Manager status code 142 .............................................. 599
+Media Manager status code 143 .............................................. 600
+Media Manager status code 144 .............................................. 600
+Media Manager status code 145 .............................................. 600
+Media Manager status code 146 .............................................. 600
+Media Manager status code 147 .............................................. 601
+Media Manager status code 148 .............................................. 601
+Media Manager status code 149 .............................................. 601
+Media Manager status code 150 .............................................. 602
+Media Manager status code 152 .............................................. 602
+Media Manager status code 153 .............................................. 603
+Media Manager status code 155 .............................................. 603
+Media Manager status code 160 .............................................. 603
+Media Manager status code 162 .............................................. 604
+Media Manager status code 163 .............................................. 604
+Media Manager status code 164 .............................................. 604
+
+Contents
+
+37
+
+Media Manager status code 165 .............................................. 605
+Media Manager status code 166 .............................................. 605
+Media Manager status code 167 .............................................. 605
+Media Manager status code 168 .............................................. 606
+Media Manager status code 169 .............................................. 606
+Media Manager status code 171 .............................................. 606
+Media Manager status code 172 .............................................. 606
+Media Manager status code 173 .............................................. 607
+Media Manager status code 175 .............................................. 607
+Media Manager status code 176 .............................................. 607
+Media Manager status code 177 .............................................. 607
+Media Manager status code 181 .............................................. 608
+Media Manager status code 182 .............................................. 609
+Media Manager status code 185 .............................................. 609
+Media Manager status code 186 .............................................. 609
+Media Manager status code 187 .............................................. 610
+Media Manager status code 188 .............................................. 611
+Media Manager status code 189 .............................................. 612
+Media Manager status code 190 .............................................. 612
+Media Manager status code 191 .............................................. 613
+Media Manager status code 192 .............................................. 613
+Media Manager status code 193 .............................................. 613
+Media Manager status code 194 .............................................. 613
+Media Manager status code 195 .............................................. 614
+Media Manager status code 196 .............................................. 614
+Media Manager status code 198 .............................................. 614
+Media Manager status code 199 .............................................. 615
+Device configuration status codes .............................. 616
+Device configuration status codes .................................................. 616
+Device configuration status code 0 ........................................... 616
+Device configuration status code 1 ........................................... 616
+Device configuration status code 2 ........................................... 617
+Device configuration status code 3 ........................................... 617
+Device configuration status code 7 ........................................... 618
+Device configuration status code 8 ........................................... 618
+Device configuration status code 9 ........................................... 618
+Device configuration status code 10 ......................................... 618
+Device configuration status code 11 .......................................... 619
+Device configuration status code 13 ......................................... 619
+Device configuration status code 14 ......................................... 619
+Device configuration status code 15 ......................................... 620
+
+Chapter 3
+
+Contents
+
+38
+
+Device configuration status code 16 ......................................... 620
+Device configuration status code 17 ......................................... 621
+Device configuration status code 18 ......................................... 621
+Device configuration status code 19 ......................................... 621
+Device configuration status code 21 ......................................... 622
+Device configuration status code 22 ......................................... 622
+Device configuration status code 24 ......................................... 622
+Device configuration status code 25 ......................................... 623
+Device configuration status code 27 ......................................... 623
+Device configuration status code 28 ......................................... 623
+Device configuration status code 29 ......................................... 624
+Device configuration status code 30 ......................................... 624
+Device configuration status code 31 ......................................... 624
+Device configuration status code 33 ......................................... 625
+Device configuration status code 34 ......................................... 625
+Device configuration status code 35 ......................................... 625
+Device configuration status code 36 ......................................... 626
+Device configuration status code 37 ......................................... 626
+Device configuration status code 38 ......................................... 626
+Device configuration status code 39 ......................................... 626
+Device configuration status code 40 ......................................... 627
+Device configuration status code 41 ......................................... 627
+Device configuration status code 42 ......................................... 627
+Device configuration status code 44 ......................................... 627
+Device configuration status code 48 ......................................... 628
+Device configuration status code 49 ......................................... 629
+Device configuration status code 51 ......................................... 629
+Device configuration status code 52 ......................................... 629
+Device configuration status code 53 ......................................... 630
+Device configuration status code 55 ......................................... 630
+Device configuration status code 56 ......................................... 630
+Device configuration status code 57 ......................................... 631
+Device configuration status code 58 ......................................... 631
+Device configuration status code 59 ......................................... 631
+Device configuration status code 60 ......................................... 632
+Device configuration status code 61 ......................................... 632
+Device configuration status code 62 ......................................... 632
+Device configuration status code 63 ......................................... 633
+Device configuration status code 64 ......................................... 633
+Device configuration status code 65 ......................................... 633
+Device configuration status code 66 ......................................... 633
+Device configuration status code 67 ......................................... 633
+Device configuration status code 68 ......................................... 634
+
+Contents
+
+39
+
+Device configuration status code 69 ......................................... 634
+Device configuration status code 70 ......................................... 634
+Device configuration status code 71 ......................................... 635
+Device configuration status code 72 ......................................... 635
+Device configuration status code 73 ......................................... 635
+Device configuration status code 74 ......................................... 635
+Device configuration status code 75 ......................................... 636
+Device configuration status code 76 ......................................... 636
+Device configuration status code 77 ......................................... 636
+Device configuration status code 78 ......................................... 637
+Device configuration status code 79 ......................................... 637
+Device configuration status code 81 ......................................... 637
+Device configuration status code 82 ......................................... 638
+Device configuration status code 83 ......................................... 638
+Device configuration status code 84 ......................................... 638
+Device configuration status code 85 ......................................... 639
+Device configuration status code 86 ......................................... 639
+Device configuration status code 87 ......................................... 639
+Device configuration status code 88 ......................................... 640
+Device configuration status code 89 ......................................... 640
+Device configuration status code 90 ......................................... 640
+Device configuration status code 91 ......................................... 641
+Device configuration status code 92 ......................................... 641
+Device configuration status code 93 ......................................... 641
+Device configuration status code 95 ......................................... 642
+Device configuration status code 96 ......................................... 642
+Device configuration status code 97 ......................................... 642
+Device configuration status code 98 ......................................... 643
+Device configuration status code 99 ......................................... 643
+Device configuration status code 100 ........................................ 643
+Device configuration status code 101 ........................................ 643
+Device management status codes ............................. 644
+Device management status codes .................................................. 644
+Device management status code 1 ........................................... 644
+Device management status code 2 ........................................... 644
+Device management status code 3 ........................................... 645
+Device management status code 4 ........................................... 645
+Device management status code 5 ........................................... 646
+Device management status code 6 ........................................... 646
+Device management status code 7 ........................................... 646
+Device management status code 8 ........................................... 647
+
+Chapter 4
+
+Contents
+
+40
+
+Device management status code 10 ......................................... 647
+Device management status code 12 ......................................... 648
+Device management status code 13 ......................................... 648
+Device management status code 14 ......................................... 648
+Device management status code 15 ......................................... 649
+Device management status code 16 ......................................... 649
+Device management status code 17 ......................................... 649
+Device management status code 19 ......................................... 650
+Device management status code 20 ......................................... 650
+Device management status code 21 ......................................... 650
+Device management status code 22 ......................................... 650
+Device management status code 23 ......................................... 651
+Device management status code 24 ......................................... 651
+Device management status code 25 ......................................... 652
+Device management status code 26 ......................................... 652
+Device management status code 27 ......................................... 652
+Device management status code 28 ......................................... 653
+Device management status code 30 ......................................... 653
+Device management status code 32 ......................................... 653
+Device management status code 33 ......................................... 654
+Device management status code 35 ......................................... 654
+Device management status code 36 ......................................... 655
+Device management status code 37 ......................................... 655
+Device management status code 38 ......................................... 655
+Device management status code 39 ......................................... 656
+Device management status code 40 ......................................... 656
+Device management status code 41 ......................................... 656
+Device management status code 42 ......................................... 657
+Device management status code 44 ......................................... 657
+Device management status code 46 ......................................... 657
+Device management status code 47 ......................................... 658
+Device management status code 48 ......................................... 658
+Device management status code 49 ......................................... 659
+Device management status code 50 ......................................... 659
+Device management status code 52 ......................................... 659
+Device management status code 53 ......................................... 660
+Device management status code 55 ......................................... 660
+Device management status code 56 ......................................... 660
+Device management status code 58 ......................................... 660
+Device management status code 59 ......................................... 660
+Device management status code 60 ......................................... 661
+Device management status code 61 ......................................... 661
+Device management status code 62 ......................................... 662
+
+Contents
+
+41
+
+Device management status code 63 ......................................... 662
+Device management status code 64 ......................................... 662
+Device management status code 65 ......................................... 662
+Device management status code 66 ......................................... 663
+Device management status code 69 ......................................... 663
+Device management status code 70 ......................................... 663
+Device management status code 71 ......................................... 664
+Device management status code 72 ......................................... 664
+Device management status code 73 ......................................... 664
+Device management status code 74 ......................................... 664
+Device management status code 75 ......................................... 665
+Device management status code 76 ......................................... 665
+Device management status code 77 ......................................... 665
+Device management status code 78 ......................................... 666
+Device management status code 79 ......................................... 666
+Device management status code 80 ......................................... 666
+Device management status code 81 ......................................... 667
+Device management status code 82 ......................................... 667
+Device management status code 83 ......................................... 667
+Device management status code 84 ......................................... 667
+Robotic status codes ...................................................... 668
+Robotic status codes ................................................................... 668
+Robotic status code 200 ......................................................... 668
+Robotic status code 201 ......................................................... 668
+Robotic status code 202 ......................................................... 669
+Robotic status code 203 ......................................................... 670
+Robotic status code 204 ......................................................... 670
+Robotic status code 205 ......................................................... 670
+Robotic status code 206 ......................................................... 671
+Robotic status code 207 ......................................................... 671
+Robotic status code 208 ......................................................... 671
+Robotic status code 209 ......................................................... 672
+Robotic status code 210 ......................................................... 672
+Robotic status code 211 ......................................................... 673
+Robotic status code 212 ......................................................... 673
+Robotic status code 213 ......................................................... 674
+Robotic status code 214 ......................................................... 674
+Robotic status code 215 ......................................................... 674
+Robotic status code 216 ......................................................... 675
+Robotic status code 217 ......................................................... 675
+Robotic status code 218 ......................................................... 675
+
+Chapter 5
+
+Contents
+
+42
+
+Robotic status code 219 ......................................................... 676
+Robotic status code 220 ......................................................... 676
+Robotic status code 221 ......................................................... 676
+Robotic status code 222 ......................................................... 677
+Robotic status code 223 ......................................................... 677
+Robotic status code 224 ......................................................... 677
+Robotic status code 225 ......................................................... 678
+Robotic status code 226 ......................................................... 678
+Robotic status code 228 ......................................................... 679
+Robotic status code 229 ......................................................... 679
+Robotic status code 230 ......................................................... 679
+Robotic status code 232 ......................................................... 680
+Robotic status code 233 ......................................................... 680
+Robotic status code 234 ......................................................... 681
+Robotic status code 235 ......................................................... 681
+Robotic status code 236 ......................................................... 681
+Robotic status code 237 ......................................................... 682
+Robotic status code 238 ......................................................... 682
+Robotic status code 239 ......................................................... 682
+Robotic status code 240 ......................................................... 682
+Robotic status code 242 ......................................................... 683
+Robotic status code 243 ......................................................... 683
+Robotic status code 244 ......................................................... 683
+Robotic status code 245 ......................................................... 683
+Robotic status code 246 ......................................................... 684
+Robotic status code 249 ......................................................... 684
+Robotic status code 250 ......................................................... 685
+Robotic status code 251 ......................................................... 685
+Robotic status code 252 ......................................................... 685
+Robotic status code 253 ......................................................... 685
+Robotic status code 254 ......................................................... 685
+Robotic status code 255 ......................................................... 685
+Robotic status code 256 ......................................................... 686
+Robotic status code 257 ......................................................... 686
+Robotic status code 258 ......................................................... 686
+Robotic status code 259 ......................................................... 686
+Robotic status code 260 ......................................................... 687
+Robotic status code 261 ......................................................... 687
+Robotic status code 262 ......................................................... 687
+
+Contents
+
+43
+
+Chapter 6
+
+Chapter 7
+
+Robotic error codes ......................................................... 689
+Robotic error codes ..................................................................... 689
+Robot Error status code 1 ....................................................... 689
+Robot Error status code 2 ....................................................... 690
+Robot Error status code 3 ....................................................... 690
+Robot Error status code 4 ....................................................... 690
+Robot Error status code 5 ....................................................... 691
+Robot Error status code 6 ....................................................... 691
+Robot Error status code 7 ....................................................... 691
+Robot Error status code 8 ....................................................... 692
+Robot Error status code 9 ....................................................... 692
+Robot Error status code 10 ..................................................... 692
+Robot Error status code 11 ..................................................... 693
+Robot Error status code 12 ..................................................... 693
+Robot Error status code 13 ..................................................... 693
+Robot Error status code 14 ..................................................... 693
+Robot Error status code 16 ..................................................... 694
+Robot Error status code 17 ..................................................... 694
+Security services status codes .................................... 695
+Security services status codes ....................................................... 695
+Security services status code 93 .............................................. 695
+Security services status code 94 .............................................. 695
+Security services status code 95 .............................................. 696
+Security services status code 96 .............................................. 696
+Security services status code 97 .............................................. 696
+Security services status code 98 .............................................. 696
+Security services status code 99 .............................................. 697
+Security services status code 100 ............................................ 697
+Security services status code 101 ............................................ 697
+Security services status code 102 ............................................ 697
+Security services status code 103 ............................................ 697
+Security services status code 104 ............................................ 698
+Security services status code 105 ............................................ 698
+Security services status code 106 ............................................ 698
+Security services status code 107 ............................................ 698
+
+Chapter
 
 1
 
