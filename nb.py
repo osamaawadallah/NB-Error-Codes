@@ -1,12 +1,19 @@
 import re, os
-NB_file = 'Data\\NetBackup81_RefGuide_StatusCodes.pdf'
+def create_path(path):
+    if not os.path.exists(path):
+        os.mkdir(path)
+create_path("Data")
+create_path("Output")
+create_path("src")
+
+NB_file = 'Data\\NetBackup81_RefGuide_StatusCodes'
 os.system("pip install pdf2txt")
-os.system(f"pdf2txt.py {NB_file} -o Data/output.txt")
+os.system(f"pdf2txt.py {NB_file}.pdf -o {NB_file}.txt")
 counter=-1
 codes = {}
 error = 0
 cond = False
-with open('Data/output.txt', 'r', encoding='utf-8') as f:
+with open(f'{NB_file}.txt', 'r', encoding='utf-8') as f:
     for line in f:
         if re.search("This chapter includes the following topics:", line) is not None:
             cond = True
